@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <style>
+        body {
+            background-color: #001f3f;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        select {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            background-color: #0074D9;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .recommendations {
+            margin-top: 20px;
+        }
+        .movie {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        .movie img {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Recommendation System</h1>
+    <form action="/" method="post">
+        <select name="movie" required>
+            <option value="" disabled {% if not selected_movie %}selected{% endif %}>Select a movie</option>
+            {% for movie in movie_list %}
+                <option value="{{ movie }}" {% if movie == selected_movie %}selected{% endif %}>{{ movie }}</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit" value="Get Recommendations">
+    </form>
+    <div class="recommendations">
+        {% if recommendations %}
+            <h2>Recommended Movies:</h2>
+            <div>
+                {% for movie, poster in zip(recommendations, posters) %}
+                    <div class="movie">
+                        <img src="{{ poster }}" alt="{{ movie }}" width="150">
+                        <p>{{ movie }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
