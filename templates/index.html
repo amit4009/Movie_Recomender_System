@@ -15,7 +15,7 @@
         h1 {
             margin-bottom: 30px;
         }
-        select {
+        input[type="text"] {
             width: 300px;
             padding: 10px;
             margin: 10px 0;
@@ -47,12 +47,12 @@
 <body>
     <h1>Movie Recommendation System</h1>
     <form action="/" method="post">
-        <select name="movie" required>
-            <option value="" disabled {% if not selected_movie %}selected{% endif %}>Select a movie</option>
+        <input type="text" name="movie" placeholder="Type or select a movie" list="movie-list" autocomplete="off" value="{{ selected_movie if selected_movie else '' }}" required><br>
+        <datalist id="movie-list">
             {% for movie in movie_list %}
-                <option value="{{ movie }}" {% if movie == selected_movie %}selected{% endif %}>{{ movie }}</option>
+                <option value="{{ movie }}">
             {% endfor %}
-        </select><br>
+        </datalist>
         <input type="submit" value="Get Recommendations">
     </form>
     <div class="recommendations">
@@ -66,6 +66,8 @@
                     </div>
                 {% endfor %}
             </div>
+        {% else %}
+            <p>No recommendations found.</p>
         {% endif %}
     </div>
 </body>
