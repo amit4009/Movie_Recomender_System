@@ -68,7 +68,7 @@ The Amazing Spider Man-2<br>
 The Amazing Spider Man<br>
 Arachnophobia<br>
 
-![alt text](<movie recomendation.png>)
+![alt text](movie_recomendation-1.png)
 
 These recommendations showcase the system's ability to find movies with similar thematic elements and content.
 
