@@ -37,21 +37,21 @@ cast: Details about the cast members.<br>
 crew: Details about the crew members.<br>
 
 # Key Features:
-Data Integration: Combines movie details with credits data to enhance feature richness.<br>
-Feature Extraction: Converts complex features into simplified, cohesive tags.<br>
-Similarity Calculation: Utilizes cosine similarity to measure and compare movie similarities.<br>
-Personalized Recommendations: Generates personalized movie recommendations based on user history.<br>
+<<u>Data Integration</u>: Combines movie details with credits data to enhance feature richness.<br>
+<<u>Feature Extraction</u>: Converts complex features into simplified, cohesive tags.<br>
+<<u>Similarity Calculation</u>: Utilizes cosine similarity to measure and compare movie similarities.<br>
+<<u>Personalized Recommendations</u>: Generates personalized movie recommendations based on user history.<br>
 
 # Algorithm
 The algorithm used in this recommendation system is based on content-based filtering. Here are the key steps:
 
-Data Preprocessing: Merge the movies and credits datasets on the title.
+<<u>Data Preprocessing</u>: Merge the movies and credits datasets on the title.
 Extract relevant features (genres, keywords, cast, crew) and convert them into a unified format.<br>
 
-Feature Engineering: Create a 'tags' column that combines the selected features into a single string for each movie.
+<<u>Feature Engineering</u>: Create a 'tags' column that combines the selected features into a single string for each movie.
 Convert the text data into numerical vectors using the CountVectorizer from scikit-learn, which limits the number of features to 5000 and removes English stop words.<br>
 
-Similarity Calculation: Compute the cosine similarity between the vectors of movies to measure their similarity.
+<<u>Similarity Calculation</u>: Compute the cosine similarity between the vectors of movies to measure their similarity.
 Convert the vectors into a sparse matrix for efficient computation.<br>
 
 # Recommendation Generation:
@@ -73,13 +73,12 @@ Arachnophobia<br>
 These recommendations showcase the system's ability to find movies with similar thematic elements and content.
 
 # Observations:
-Enhanced Features: Merging movie and credit data enriches the feature set, improving similarity calculations<br>.
-Effective Tagging: Simplified feature conversion aids in creating cohesive tags for better recommendations.<br>
-Accurate Similarity: Cosine similarity provides a robust measure for determining movie similarity.<br>
-User Personalization: Aggregating recommendations based on user history enhances personalized suggestions.<br>
+<<u>Enhanced Features</u>: Merging movie and credit data enriches the feature set, improving similarity calculations<br>.
+<<u>Effective Tagging</u>: Simplified feature conversion aids in creating cohesive tags for better recommendations.<br>
+<<u>Accurate Similarity</u>: Cosine similarity provides a robust measure for determining movie similarity.<br>
+<<u>User Personalization</u>: Aggregating recommendations based on user history enhances personalized suggestions.<br>
 
 # Future Improvements
-Hybrid Recommendations: Incorporate collaborative filtering techniques to enhance the recommendation accuracy.<br>
-User Feedback: Integrate user feedback to continually refine and improve the recommendation system.<br>
-
-Scalability: Optimize the system to handle larger datasets and provide faster recommendations.<br>
+<<u>Hybrid Recommendations</u>: Incorporate collaborative filtering techniques to enhance the recommendation accuracy.<br>
+<<u>User Feedback</u>: Integrate user feedback to continually refine and improve the recommendation system.<br>
+<<u>Scalability<</u>: Optimize the system to handle larger datasets and provide faster recommendations.<br>
