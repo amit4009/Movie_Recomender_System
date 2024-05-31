@@ -20,7 +20,12 @@ def fetch_poster(movie_id):
     return None
 
 def recommend(movie):
-    index = movies[movies['title'] == movie].index[0]
+    try:
+        index = movies[movies['title'] == movie].index[0]
+    except IndexError:
+        print(f"Movie '{movie}' not found in the database.")
+        return [], []
+
     distances = sorted(list(enumerate(similarity[index])), reverse=True, key=lambda x: x[1])
     recommended_movie_names = []
     recommended_movie_posters = []
@@ -38,8 +43,11 @@ def home():
     posters = []
 
     if request.method == 'POST':
-        selected_movie = request.form['movie']
-        recommendations, posters = recommend(selected_movie)
+        selected_movie = request.form.get('movie')
+        if selected_movie and selected_movie in movie_list:
+            recommendations, posters = recommend(selected_movie)
+        else:
+            print(f"Movie '{selected_movie}' not found in the list.")
 
     return render_template('index.html', movie_list=movie_list, selected_movie=selected_movie, recommendations=recommendations, posters=posters, zip=zip)
 
