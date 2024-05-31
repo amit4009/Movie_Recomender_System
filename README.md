@@ -73,7 +73,7 @@ Arachnophobia<br>
 These recommendations showcase the system's ability to find movies with similar thematic elements and content.
 
 # Observations:
-<u>Enhanced Features</u>: Merging movie and credit data enriches the feature set, improving similarity calculations<br>.
+<u>Enhanced Features</u>: Merging movie and credit data enriches the feature set, improving similarity calculations.<br>
 <u>Effective Tagging</u>: Simplified feature conversion aids in creating cohesive tags for better recommendations.<br>
 <u>Accurate Similarity</u>: Cosine similarity provides a robust measure for determining movie similarity.<br>
 <u>User Personalization</u>: Aggregating recommendations based on user history enhances personalized suggestions.<br>
